@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: Credit-Risk-Modeling
+Version: 0.0.1
+Author: Ganu Patil
+Author-email: ganeshpatil91803@gmail.com
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: seaborn
+Requires-Dist: xgboost
+Requires-Dist: scikit-learn
+Requires-Dist: imbalanced-learn
+Requires-Dist: catboost
+Requires-Dist: pymongo
+Requires-Dist: mlflow
+Requires-Dist: scipy
+Requires-Dist: statsmodels

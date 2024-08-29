@@ -1,0 +1,31 @@
+stages:
+  data_ingestion:
+    cmd: python src/components/data_ingestion.py
+    deps:
+      - src/components/data_ingestion.py
+      - C:/Users/Harshali/Documents/CRM/notebooks/data/Data_file.xlsx
+    outs:
+      - ../../artifacts/raw.csv
+      - ../../artifacts/train.csv
+      - ../../artifacts/test.csv
+
+  data_transformation:
+    cmd: python src/components/data_transformation.py --train ../../artifacts/train.csv --test ../../artifacts/test.csv
+    deps:
+      - src/components/data_transformation.py
+      - ../../artifacts/train.csv
+      - ../../artifacts/test.csv
+    outs:
+      - ../../artifacts/preprocessor.pkl
+      - ../../artifacts/transformed_train.npy
+      - ../../artifacts/transformed_test.npy
+
+  model_trainer:
+    cmd: python src/components/model_trainer.py --train ../../artifacts/transformed_train.npy --test ../../artifacts/transformed_test.npy
+    deps:
+      - src/components/model_trainer.py
+      - ../../artifacts/transformed_train.npy
+      - ../../artifacts/transformed_test.npy
+    outs:
+      - ../../artifacts/model.pkl
+      - ../../artifacts/model_metrics.json

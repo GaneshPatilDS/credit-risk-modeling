@@ -1,0 +1,14 @@
+# Project dependencies and libraries required for the CRM project
+
+numpy
+pandas
+seaborn
+xgboost
+scikit-learn
+imbalanced-learn
+catboost
+pymongo
+mlflow
+scipy
+statsmodels
+-e .
