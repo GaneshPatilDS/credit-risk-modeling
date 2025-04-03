@@ -6,7 +6,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from src.logger import logging
 from src.exception import CustomException
-from src.constant import *  # Ensure this imports any required constants or column names
+from src.constant import * 
+# Ensure this imports any required constants or column names
 
 @dataclass
 class DataIngestionConfig:
@@ -55,3 +56,5 @@ class DataIngestion:
         except Exception as e:
             logging.info('Exception occurred at Data Ingestion stage')
             raise CustomException(e, sys)
+
+

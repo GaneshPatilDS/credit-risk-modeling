@@ -40,3 +40,4 @@ if __name__ == '__main__':
         logging.error(f"An error occurred: {e}")
         raise CustomException(e, sys)
 
+  

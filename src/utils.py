@@ -4,6 +4,7 @@ import pickle
 import numpy as np 
 import pandas as pd
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error, accuracy_score, precision_score, recall_score, f1_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, r2_score, mean_squared_error
 from sklearn.model_selection import GridSearchCV
 
 from src.exception import CustomException
@@ -46,6 +47,38 @@ def evaluate_models(X_train, y_train, X_test, y_test, models):
     except Exception as e:
         logging.info('Exception occured during model training')
         raise CustomException(e,sys)
+    
+    
+    
+#from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, r2_score, mean_squared_error
+
+def evaluate_models(X_train, y_train, X_test, y_test, models):
+    try:
+        report = {}
+        for name, model in models.items():
+            model.fit(X_train, y_train)
+            y_train_pred = model.predict(X_train)
+            y_test_pred = model.predict(X_test)
+            
+            # Check if it's a classifier or regressor
+            if hasattr(model, 'predict_proba'):  # This indicates it's a classifier
+                report[name] = {
+                    'Accuracy': accuracy_score(y_test, y_test_pred),
+                    'Precision': precision_score(y_test, y_test_pred, average='weighted'),
+                    'Recall': recall_score(y_test, y_test_pred, average='weighted'),
+                    'F1': f1_score(y_test, y_test_pred, average='weighted')
+                }
+            else:  # Assume it's a regressor
+                report[name] = {
+                    'R2 Score': r2_score(y_test, y_test_pred),
+                    'MSE': mean_squared_error(y_test, y_test_pred)
+                }
+        return report
+    except Exception as e:
+        logging.info('Exception occurred during model training')
+        raise CustomException(e, sys)
+    
+    
 
 class CustomOrdinalEncoder:
     def fit(self, X, y=None):

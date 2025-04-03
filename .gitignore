@@ -4,7 +4,7 @@ __pycache__/
 
 # Virtual Environment
 venv/
-CRM_ENV/
+CRM_ENV1/
 
 # Distribution / Packaging
 build/
@@ -15,9 +15,6 @@ dist/
 Logs/
 artifacts/
 
-# DVC Related
-#.dvc/cache/
-#.dvc/tmp/
 
 # IDE Specific
 .vscode/
@@ -27,6 +24,4 @@ artifacts/
 mlruns/
 
 # Sensitive Files
-.env
-*.db
-*.sqlite3
+

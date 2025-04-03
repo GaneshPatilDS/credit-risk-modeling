@@ -11,4 +11,5 @@ pymongo
 mlflow
 scipy
 statsmodels
+hyperopt
 -e .

@@ -1,6 +1,0 @@
-[2024-08-18 16:50:59,939] 28 root - INFO - Data Ingestion method starts
-[2024-08-18 16:51:58,574] 32 root - INFO - Dataset read as pandas DataFrame
-[2024-08-18 16:51:58,893] 37 root - INFO - Found 0 duplicate rows
-[2024-08-18 16:51:59,010] 39 root - INFO - Drop duplicates
-[2024-08-18 16:52:00,201] 43 root - INFO - Raw data saved
-[2024-08-18 16:52:01,479] 49 root - INFO - Ingestion of Data is completed
