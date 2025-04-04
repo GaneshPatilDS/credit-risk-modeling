@@ -27,15 +27,5 @@ The model is trained to classify borrowers into priority levels, helping financi
 
 ## 📁 Project Structure
 
-credit-risk-modeling/
-│── notebooks/              # Jupyter Notebooks for EDA & Model Training
-│── src/                    # Source code for model pipeline
-│── artifacts/              # Stored model artifacts (ignored in Git)
-│── Logs/                   # Logs from training & evaluation (ignored in Git)
-│── requirements.txt        # Python dependencies
-│── setup.py                # Project setup
-│── template.py             # Project template
-│── predict_unseen_data.py  # Script to predict on new data
-│── .gitignore              # Files to ignore in Git
-│── README.md               # Project Documentation (You are here! 📄)
+![ps](https://github.com/user-attachments/assets/2bd8a3d8-23b0-4010-8383-f299a8782dda)
 
